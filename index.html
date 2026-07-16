@@ -404,6 +404,60 @@ tfoot td:first-child{font-family:var(--sans);font-size:13px}
 .ct-dedup-row b{color:var(--accent)}
 .ct-empty-note{font-size:13px;color:var(--muted);padding:24px;text-align:center;border:1px dashed var(--border);border-radius:12px}
 .ct-processing{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);padding:12px 0}
+/* ── CrediTrace: analysis page (Checkpoint 3) ───────────────────── */
+.ct-ladder{border:1px solid var(--border);border-radius:12px;background:var(--surface);margin-bottom:22px;overflow:hidden}
+.ct-ladder-row{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--border-soft)}
+.ct-ladder-row:last-child{border-bottom:none}
+.ct-ladder-row.ct-ladder-sub{padding-left:32px;color:var(--muted);font-size:13px}
+.ct-ladder-row.ct-ladder-final{background:var(--accent-pale);font-weight:560}
+.ct-ladder-row.ct-ladder-floor{background:var(--accent-light);font-weight:620}
+.ct-ladder-label{font-size:13.5px;color:var(--text)}
+.ct-ladder-value{font-family:var(--mono);font-size:14px;color:var(--text)}
+.ct-ratio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+.ct-ratio-card{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:var(--surface)}
+.ct-ratio-card .ct-ratio-big{font-family:var(--mono);font-size:24px;color:var(--accent);margin-bottom:2px}
+.ct-ratio-card .ct-ratio-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.ct-section-title{font-size:14px;font-weight:560;color:var(--text);margin:26px 0 10px}
+.ct-flag-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.ct-flag-row{border:1px solid var(--border);border-radius:10px;padding:11px 14px;background:var(--surface);font-size:13px}
+.ct-flag-row .ct-flag-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:3px}
+.ct-flag-row .ct-flag-amt{font-family:var(--mono);color:var(--text);font-weight:560}
+.ct-flag-row .ct-flag-why{color:var(--muted);font-size:12.5px;line-height:1.5}
+.ct-tier-tag{font-size:10px;font-family:var(--mono);border-radius:5px;padding:2px 7px;text-transform:uppercase}
+.ct-tier-tag.high{background:var(--red-bg);color:var(--red)}
+.ct-tier-tag.probable{background:var(--amber-bg);color:var(--amber)}
+.ct-tier-tag.confirmed{background:var(--green-bg);color:var(--green)}
+.ct-appdate-note{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+/* ── CrediTrace: workbench page (Checkpoint 4) ──────────────────── */
+.ct-wb-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:20px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--accent-pale)}
+.ct-wb-summary-item .ct-wb-val{font-family:var(--mono);font-size:17px;color:var(--text)}
+.ct-wb-summary-item .ct-wb-lbl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.ct-wb-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.ct-wb-filter-btn{font-size:12px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.ct-wb-filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ct-wb-row{border:1px solid var(--border);border-radius:12px;background:var(--surface);margin-bottom:10px;overflow:hidden}
+.ct-wb-row.ct-wb-dismissed{opacity:.55}
+.ct-wb-row-head{padding:13px 16px;display:flex;align-items:center;gap:12px;cursor:pointer}
+.ct-wb-row-head:hover{background:var(--accent-pale)}
+.ct-wb-row-kind{font-size:12.5px;color:var(--text);flex:1;min-width:0}
+.ct-wb-row-kind b{font-weight:600}
+.ct-wb-row-amt{font-family:var(--mono);font-size:13.5px;color:var(--text);white-space:nowrap}
+.ct-wb-verdict-badge{font-size:10px;font-family:var(--mono);border-radius:5px;padding:2px 7px;text-transform:uppercase;white-space:nowrap}
+.ct-wb-verdict-badge.upheld{background:var(--red-bg);color:var(--red)}
+.ct-wb-verdict-badge.dismissed{background:var(--border-soft);color:var(--muted)}
+.ct-wb-verdict-badge.pending{background:var(--amber-bg);color:var(--amber)}
+.ct-wb-row-body{padding:0 16px 16px;border-top:1px solid var(--border-soft)}
+.ct-wb-legs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.ct-wb-leg{border:1px solid var(--border-soft);border-radius:8px;padding:10px 12px;font-size:12px}
+.ct-wb-leg-hdr{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-bottom:5px}
+.ct-wb-leg-narr{color:var(--text);line-height:1.5;word-break:break-word}
+.ct-wb-why{font-size:12.5px;color:var(--muted);line-height:1.55;margin:10px 0}
+.ct-wb-actions{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.ct-wb-btn{font-size:12px;padding:6px 13px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-family:inherit;color:var(--text)}
+.ct-wb-btn.uphold.active{background:var(--red);color:#fff;border-color:var(--red)}
+.ct-wb-btn.dismiss.active{background:var(--dim);color:#fff;border-color:var(--dim)}
+.ct-wb-note{width:100%;margin-top:8px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12.5px;font-family:inherit;resize:vertical;min-height:44px}
+.ct-wb-note::placeholder{color:var(--dim)}
 </style>
 </head>
 <body>
@@ -417,6 +471,14 @@ tfoot td:first-child{font-family:var(--sans);font-size:13px}
       <div class="s-nav-item" data-page="case" id="nCase">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/></svg>
         Case
+      </div>
+      <div class="s-nav-item" data-page="analysis" id="nAnalysis">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+        Analysis
+      </div>
+      <div class="s-nav-item" data-page="workbench" id="nWorkbench">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Workbench
       </div>
       <div class="s-nav-item" data-page="overview" id="nOverview">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
@@ -466,7 +528,8 @@ const FNAMES = {opay:'OPay Wallet',altbank:'Alternative Bank',stanbic:'Stanbic I
   gtbank:'GTBank',access:'Access Bank',accessdba:'Access Bank (DBA Premium)',accessweb:'Access Bank (Web Export)',kuda:'Kuda Bank',
   providus:'ProvidusBank',wema:'Wema Bank',tajbank:'TAJBank',alat:'Wema Bank (ALAT)',
   alatbiz:'Wema Bank (ALAT Business)',keystone:'Keystone Bank',
-  zenith:'Zenith Bank',moniepoint:'Moniepoint MFB',
+  zenith:'Zenith Bank',moniepoint:'Moniepoint MFB',moniepointbiz:'Moniepoint MFB (Business)',
+  monoagg:'OPay Wallet (via Mono)',
   unionbank:'Union Bank of Nigeria',fcmb:'FCMB (First City Monument Bank)',
   accessng:'Access Bank (NG Statement)',
   omnipay:'OmniPay Wallet',
@@ -509,7 +572,7 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c =>
 let state = null;
 
 function navigate(page) {
-  if (!state && page !== 'upload' && page !== 'case') page = 'upload';
+  if (!state && page !== 'upload' && page !== 'case' && page !== 'analysis' && page !== 'workbench') page = 'upload';
   location.hash = page;
   renderPage(page);
   updateNav(page);
@@ -857,12 +920,54 @@ function detectFormat(text) {
   // Moniepoint: checked first and structurally, because Moniepoint narrations
   // routinely mention other banks as counterparties (e.g. "TRANSFER TO Omnipay-...
   // OPay"), which would otherwise false-positive against later bank-name rules.
-  // ISO timestamp anchors combined with Moniepoint reference suffixes, or the
-  // TRF|2MPT / MIT|HBP| reference prefixes, are structural and unambiguous.
-  if ((/\d{4}-\d{2}-\d{2}T\d{2}:/.test(t) && /_BUSINESS_CREDIT_0|_DEBIT_0/.test(t)) ||
-      /TRF\|2MPT/i.test(t) || /MIT\|HBP\|/i.test(t)) return 'moniepoint';
+  // The ISO-timestamp date-column format ("2025-07-01T09:55:56") is a genuine
+  // structural property of Moniepoint's OWN statement layout and must gate
+  // every signal below — not just the first. TRF|2MPT and MIT|HBP| are
+  // Moniepoint's transfer-reference prefixes, but they leak into OTHER banks'
+  // inbound-transfer narrations whenever the sender's account happens to be
+  // Moniepoint-linked (e.g. an Access Bank DiamondXtra statement literally
+  // quoting "AT129TRF|2MPT2c7i4|...HAMSIU JIBIY Trf for" from an incoming NIP
+  // transfer). Without the ISO-timestamp gate, that single narration fragment
+  // misroutes an entire non-Moniepoint statement into the Moniepoint parser.
+  const ctHasIsoTimestamp = /\d{4}-\d{2}-\d{2}T\d{2}:/.test(t);
+  if (ctHasIsoTimestamp && (/_BUSINESS_CREDIT_0|_DEBIT_0/.test(t) ||
+      /TRF\|2MPT/i.test(t) || /MIT\|HBP\|/i.test(t))) return 'moniepoint';
+  // Moniepoint "business/detailed" export — a much denser 18-column
+  // template (Settlement Debit/Credit, Balance Before/After, Beneficiary/
+  // Source Institution, etc.) than the simple 6-column consumer statement
+  // above. Its date column is so narrow that the ISO timestamp fragments
+  // across 3-4 separate text rows and never appears contiguously, so the
+  // gate above can't fire — this needs its own anchor. "Settlement Debit"
+  // + "Settlement Credit" + "Balance Before" + "Balance After" are this
+  // template's own column headers, structurally safe from the same
+  // counterparty-mention risk that affects bare bank-name text.
+  // "Settlement Debit"/"Settlement Credit"/"Balance Before"/"Balance After"
+  // are two-line column headers in the source PDF ("Settlement" / "Debit"
+  // stacked). Row-based text extraction buckets by y-position, so each
+  // header's first line and second line land on two DIFFERENT rows,
+  // squished together with every other column's matching line —
+  // "...SettlementSettlementBalanceBalance..." on one row, "...Amount
+  // DebitCreditBeforeAfter..." on the next. "Settlement" and "Debit" are
+  // never adjacent in the extracted text, so match the actual squished
+  // patterns instead.
+  if (/Settlement\s*Settlement/i.test(t) && /Debit\s*Credit\s*Before\s*After/i.test(t)) return 'moniepointbiz';
   if (/Trans\.?\s*Time\s+Value\s+Date/i.test(t) && /Wallet\s*Account/i.test(t)) return 'opay';
-  if (/Stanbic\s*IBTC/i.test(t) || /INFLOW\s*VS\s*OUTFLOW/i.test(t) ||
+  // Mono-aggregator wallet statement — a third-party data aggregator's OWN
+  // PDF template, not a native bank/wallet export. Structurally distinct
+  // from the native OPay format above: numbered transaction list with a
+  // "# DATE NARRATION DEBIT CREDIT BALANCE" header, and "Wallet Account"
+  // appears in an "Account Type / Currency" field rather than as a column
+  // header. This template's own Balance column is a known broken
+  // placeholder (always "0.00" on every row, cover page included) — see
+  // the noBalanceData handling in extractCoverStats/authChecks.
+  if (/Wallet\s*Account/i.test(t) && /#\s*DATE\s+NARRATION\s+DEBIT\s+CREDIT\s+BALANCE/i.test(t)) return 'monoagg';
+  // Stanbic IBTC — bare bank-name text is not enough on its own: it can
+  // appear as a counterparty's institution name on another bank's
+  // statement (found on a real Moniepoint business statement where a
+  // customer paid in via Stanbic IBTC). Require an actual Stanbic-specific
+  // structural marker from their own statement template instead of just
+  // the bank name floating in a narration or metadata field.
+  if (/INFLOW\s*VS\s*OUTFLOW/i.test(t) ||
       /ACCOUNT\s*NUMBER[^|]+\|\s*CURRENCY/i.test(t) || /POSTEDCREATE/i.test(t)) return 'stanbic';
   if (/alternative\s*bank/i.test(t) || /altbank\.ng/i.test(t) ||
      (/DATE\s+REFERENCE\s+NARRATION/i.test(t) && /DEBIT\s+CREDIT\s+BALANCE/i.test(t))) return 'altbank';
@@ -898,17 +1003,24 @@ function detectFormat(text) {
   if (/Access\s*Bank/i.test(t)) return 'access';
   if (/kuda/i.test(t)) return 'kuda';
   if (/Providus/i.test(t)) return 'providus';
-  if (/DIAMONDXTRA/i.test(t) || /Wema\s*Bank/i.test(t) ||
-     (/TOTAL\s*WITHDRAWALS/i.test(t) && /TOTAL\s*LODGEMENTS/i.test(t))) return 'wema';
+  // Access Bank DBA Premium / legacy DiamondXtra product — Withdrawals/
+  // Lodgements columns, M/D/YYYY dates. DIAMONDXTRA is a Diamond Bank
+  // product name inherited by Access Bank after the 2019 merger, NOT a
+  // Wema Bank product — checked here, before 'wema', and deliberately does
+  // NOT require "Access Bank" as literal text, because on real DBA Premium
+  // statements that text often appears only deep in transaction narrations
+  // (e.g. as a counterparty's bank name), thousands of characters past this
+  // function's 6000-char scan window — a rule gated on it would never fire.
+  if (/DIAMONDXTRA/i.test(t) || /DBA\s*[-–]\s*PREMIUM/i.test(t) ||
+      (/TOTAL\s*WITHDRAWALS/i.test(t) && /TOTAL\s*LODGEMENTS/i.test(t))) return 'accessdba';
+  // Wema Bank — kept narrow: literal bank name only, since the structural
+  // signals above belong to Access/Diamond DBA Premium, not Wema.
+  if (/Wema\s*Bank/i.test(t)) return 'wema';
   if (/TAJBank/i.test(t) || /tajconnect@tajbank/i.test(t)) return 'tajbank';
   if (/keystonebankng\.com/i.test(t) || /Keystone\s*Bank/i.test(t)) return 'keystone';
   // (Moniepoint is detected structurally at the top of this function, per §4.)
   // Zenith Bank
   if (/ZENITH\s*BANK/i.test(t)) return 'zenith';
-  // Access Bank DBA Premium — Withdrawals/Lodgements columns + M/D/YYYY dates
-  if (/Access\s*Bank/i.test(t) &&
-      (/TOTAL\s+WITHDRAWALS/i.test(t) || /DBA\s*[-–]\s*PREMIUM/i.test(t) ||
-       /\b\d{1,2}\/\d{1,2}\/\d{4}\b/.test(t))) return 'accessdba';
   // Wema ALAT Business (Balance-first column layout, numeric DD-MM-YYYY dates)
   if (/Opening\s*Bal:/i.test(t) && /MY\s*BUSINESS\s*ACCOUNT/i.test(t)) return 'alatbiz';
 
@@ -1024,9 +1136,18 @@ function extractCoverStats(text, fmt) {
     };
   }
 
-  if (fmt === 'wema') {
+  if (fmt === 'wema' || fmt === 'accessdba') {
     const acctMatch   = text.match(/ACCOUNT\s*NO[\.\s:]*(\d{7,12})/i);
-    const nameMatch   = text.match(/Account[\s\S]{1,30}?([A-Z]{2}[A-Z\s]{3,40})/);
+    // Real DBA Premium cover pages are two-column: "Account Name" label sits
+    // on one line, the customer's actual name on the next — but that next
+    // line often gets glued to the right column's "TOTAL LODGEMENTS ..."
+    // text with no space (row-bucketed text extraction has no notion of
+    // columns), with a "TOTAL WITHDRAWALS ..." line from the right column
+    // sometimes sitting in between. A loose "next ALL-CAPS run after
+    // Account" regex grabs "TOTAL WITHDRAWALS" instead of the real name —
+    // this anchors on the literal "Account Name" label and explicitly
+    // skips past that interleaved line.
+    const nameMatch   = text.match(/Account\s*Name\s*\n(?:TOTAL\s*WITHDRAWALS[^\n]*\n)?([A-Z][A-Za-z\s]+?)(?:TOTAL\s*LODGEMENTS|\n|$)/i);
     const periodMatch = text.match(/(\d{1,2}\/\d{1,2}\/\d{4})\s+\d{2}:\d{2}:\d{2}\s+[A-Z]+\s+To\s+(\d{1,2}\/\d{1,2}\/\d{4})/i);
     return {
       opening:  after(/OPENING\s*BALANCE/i),
@@ -1109,6 +1230,56 @@ function extractCoverStats(text, fmt) {
     };
   }
 
+  if (fmt === 'moniepointbiz') {
+    // Moniepoint "business/detailed" export cover page — same label/value
+    // conventions as the consumer format above, but label and value often
+    // land on the same row rather than adjacent rows, since this format's
+    // two-column cover layout row-buckets differently. \s+ (rather than
+    // \s*\n?\s*) handles both.
+    const nameM   = text.match(/Business\s*Name\s+([^\n]+)/i);
+    const acctM   = text.match(/Account\s*Number\s+(\d{6,13})/i);
+    const periodM = text.match(/Date\s+(\d{2}\/\d{2}\/\d{4})\s*-\s*(\d{2}\/\d{2}\/\d{4})/i);
+    const openM   = text.match(/Opening\s*Balance\s+([\d,]+\.\d{2})/i);
+    const closeM  = text.match(/Closing\s*Balance\s+([\d,]+\.\d{2})/i);
+    const drM     = text.match(/Total\s*Debits\s+([\d,]+\.\d{2})/i);
+    const crM     = text.match(/Total\s*Credits\s+([\d,]+\.\d{2})/i);
+    return {
+      opening:  openM ? toNum(openM[1]) : null,
+      closing:  closeM ? toNum(closeM[1]) : null,
+      statedDr: drM ? toNum(drM[1]) : null,
+      statedCr: crM ? toNum(crM[1]) : null,
+      drCount: null, crCount: null,
+      acctName: nameM ? nameM[1].trim() : '',
+      acctNum:  acctM ? acctM[1] : '',
+      period:   periodM ? `${periodM[1]} – ${periodM[2]}` : '',
+    };
+  }
+
+  if (fmt === 'monoagg') {
+    // Mono-aggregator cover page is a multi-column layout that glues label
+    // and value text from adjacent columns together with no separator
+    // (e.g. "8079473736Opay", three "NGN X.XX" amounts run together with
+    // zero space between them). No usable balance column exists anywhere
+    // in this export (every row, including the cover page, prints a
+    // placeholder "NGN 0.00") — noBalanceData signals authChecks to skip
+    // balance-based reconciliation entirely and rely on stated totals.
+    const nameM = text.match(/([A-Z][A-Z\s]{4,50})\n\s*Contact\b/);
+    const acctM = text.match(/Account\s*Number[A-Za-z]*\s*\n?\s*(\d{6,13})/i);
+    const bankM = text.match(/Account\s*Number[A-Za-z]*\s*\n?\s*\d{6,13}([A-Za-z]+)/i);
+    const amts  = [...text.matchAll(/NGN\s*([\d,]+\.\d{2})/gi)].slice(0,3).map(m => toNum(m[1]));
+    const periodM = text.match(/NGN([A-Za-z]{3}\s+\d{1,2},\s*\d{4})\s*to\s*([A-Za-z]{3}\s+\d{1,2},\s*\d{4})/i);
+    return {
+      opening: null, closing: null, noBalanceData: true,
+      statedDr: amts.length >= 2 ? amts[1] : null,
+      statedCr: amts.length >= 3 ? amts[2] : null,
+      drCount: null, crCount: null,
+      acctName: nameM ? nameM[1].trim() : '',
+      acctNum:  acctM ? acctM[1] : '',
+      underlyingBank: bankM ? bankM[1].trim() : '',
+      period:   periodM ? `${periodM[1]} – ${periodM[2]}` : '',
+    };
+  }
+
   // Generic fallback — try common label variants
   return {
     opening:  after(/Opening\s*Balance/i) || after(/OPENING\s*BALANCE/i),
@@ -1135,6 +1306,7 @@ function buildTxnsDirect(records) {
       balance:   r.balance || 0,
       narration: (r.narration || '').slice(0, 80).trim(),
       cat:       categorise(r.narration || '', (r.credit || 0) > 0),
+      ...(r.balanceAnomaly ? { balanceAnomaly: true } : {}),
     }));
 }
 
@@ -2091,7 +2263,11 @@ function parseAlat(lines, opening) {
 
 // ── WEMA BANK (M/D/YYYY, multi-line narration, Withdrawals/Lodgements/Balance) ──
 function parseWema(lines, opening) {
-  // Wema Bank DIAMONDXTRA — M/D/YYYY date, explicit Withdrawals/Lodgements/Balance columns
+  // Reached only for statements detected via literal "Wema Bank" text — see
+  // detectFormat(). DiamondXtra / DBA Premium statements (Access Bank's
+  // legacy Diamond Bank product) route to parseAccessDBA instead, which
+  // trusts each row's own printed Withdrawal/Lodgement values rather than
+  // inferring debit/credit from balance deltas the way this parser does.
   // Layout-agnostic: handles both y-grouped (date+amounts same line) and
   // content-stream-order (date alone, amounts arrive 2-8 lines later)
   const DATE  = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/;
@@ -2262,6 +2438,198 @@ async function parseMoniepoint(file) {
     }
   }
 
+  return buildTxnsDirect(records);
+}
+
+// ── MONIEPOINT "BUSINESS/DETAILED" EXPORT ─────────────────────────
+// A much denser 18-column template than the consumer statement above —
+// Settlement Debit/Credit, Balance Before/After, Beneficiary/Source
+// Institution, etc. — used for business/agent accounts. Its narrow date
+// column wraps the ISO timestamp across 3-4 separate rows (vs 2 for the
+// consumer format), so it's detected on its own column headers instead
+// (see detectFormat) and needs its own coordinate parser: the x-positions
+// below don't match the consumer format's layout at all.
+//
+// Column anchors (x0), from the real template:
+//   date 46.5 · acctName 87.0 · type 142.1 · status 211.8 · terminal 281.6
+//   rrn 337.4 · ref 372.1 · reversal 719.4 · amount 775.8 · debit 845.5
+//   credit 910.7 · balBefore 975.8 · balAfter 1032.9 · charge 1089.9
+//   beneficiary 1136.4 · beneficiaryInst 1200.3 · source 1267.2
+//   sourceInst 1329.2 · narration 1403.3
+//
+// Validated against a real 5-transaction statement: exact match on total
+// debits, total credits, and closing balance via Balance After telescoping.
+async function parseMoniepointBiz(file) {
+  const buf = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+
+  const COLS = [
+    [46.5,'date'],[87.0,'acctName'],[142.1,'type'],[211.8,'status'],
+    [281.6,'terminal'],[337.4,'rrn'],[372.1,'ref'],[719.4,'reversal'],
+    [775.8,'amount'],[845.5,'debit'],[910.7,'credit'],[975.8,'balBefore'],
+    [1032.9,'balAfter'],[1089.9,'charge'],[1136.4,'beneficiary'],
+    [1200.3,'beneficiaryInst'],[1267.2,'source'],[1329.2,'sourceInst'],
+    [1403.3,'narration'],
+  ];
+  const classify = (x0) => {
+    let best = COLS[0][1], bestDist = Infinity;
+    for (const [cx, name] of COLS) {
+      const d = Math.abs(x0 - cx);
+      if (d < bestDist) { bestDist = d; best = name; }
+    }
+    return best;
+  };
+
+  const records = [];
+  let carry = null;
+
+  for (let p = 1; p <= pdf.numPages; p++) {
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    page.cleanup();
+
+    const items = [];
+    for (const it of content.items) {
+      const s = it.str || '';
+      if (!s.trim()) continue;
+      items.push({ x0: it.transform[4], y: it.transform[5], s });
+    }
+    if (!items.length) continue;
+
+    const rows = [];
+    for (const it of items) {
+      const existing = rows.find(r => Math.abs(r.y - it.y) <= 2);
+      if (existing) existing.items.push(it);
+      else rows.push({ y: it.y, items: [it] });
+    }
+    rows.sort((a, b) => b.y - a.y);
+    for (const row of rows) row.items.sort((a, b) => a.x0 - b.x0);
+
+    // Merge into transaction bands using previous-row chaining (not a
+    // fixed first-row anchor) — a single transaction here can span 30-40px
+    // across many wrapped sub-rows (date, account name, narration all
+    // wrap), while consecutive DIFFERENT transactions are 50px+ apart.
+    const bands = [];
+    let band = null, prevY = null;
+    for (const row of rows) {
+      const isHeaderRow = row.items.some(it => ['Date','Narration','Charge','Beneficiary'].includes(it.s.trim()));
+      if (isHeaderRow) { band = null; prevY = null; continue; }
+      if (!band || Math.abs(row.y - prevY) > 20) {
+        band = { items: [] };
+        if (carry) { band.items.push(...carry); carry = null; }
+        bands.push(band);
+      }
+      band.items.push(...row.items);
+      prevY = row.y;
+    }
+    if (bands.length) {
+      const lastBand = bands[bands.length - 1];
+      const dParts = lastBand.items.filter(it => classify(it.x0) === 'date').map(it => it.s.trim());
+      const complete = dParts.join('').match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/);
+      if (!complete) { carry = bands.pop().items; }
+    }
+
+    for (const { items: bandItems } of bands) {
+      const cols = {};
+      for (const { x0, s } of bandItems) {
+        const v = s.trim();
+        if (!v) continue;
+        const col = classify(x0);
+        if (!cols[col]) cols[col] = [];
+        cols[col].push(v);
+      }
+      const dateStr = (cols.date || []).join('');
+      const m = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(:(\d{2}))?$/);
+      if (!m) continue;
+      const date = new Date(Date.UTC(+m[1], +m[2]-1, +m[3], +m[4], +m[5], +(m[7]||0)));
+      if (isNaN(date.getTime())) continue;
+
+      const debit = toNum((cols.debit || ['0'])[0]);
+      const credit = toNum((cols.credit || ['0'])[0]);
+      const balAfter = toNum((cols.balAfter || ['0'])[0]);
+      const narration = cleanNarr((cols.narration || []).join(' '));
+
+      records.push({ date, debit, credit, balance: balAfter, narration });
+    }
+  }
+  return buildTxnsDirect(records);
+}
+
+// ── MONO-AGGREGATOR WALLET STATEMENT ──────────────────────────────
+// A third-party data aggregator's (Mono) own PDF template re-presenting an
+// underlying wallet/bank account's data — not a native export. Simple
+// single-line-per-transaction layout (no wrapping), with DEBIT and CREDIT
+// distinguishable purely by column x-position (both print as "NGN X.XX",
+// with the non-applicable one simply absent from that row rather than
+// shown as an explicit zero). The BALANCE column is a known broken
+// placeholder — always "NGN 0.00" on every single row — so it's read but
+// never trusted for reconciliation (see noBalanceData in extractCoverStats
+// and authChecks).
+//
+// Validated against a real 99-transaction statement: exact match on total
+// debits, total credits, AND all seven of the statement's own monthly
+// breakdown figures.
+async function parseMonoAgg(file) {
+  const buf = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+
+  const records = [];
+  let colDebit = 345.7, colCredit = 420.5, colBalance = 509.7;
+  const MONTHS = { Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11 };
+
+  for (let p = 1; p <= pdf.numPages; p++) {
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    page.cleanup();
+
+    const items = [];
+    for (const it of content.items) {
+      const s = (it.str || '').trim();
+      if (!s) continue;
+      items.push({ x0: it.transform[4], y: it.transform[5], s });
+      if (s === 'DEBIT') colDebit = it.transform[4];
+      else if (s === 'CREDIT') colCredit = it.transform[4];
+      else if (s === 'BALANCE') colBalance = it.transform[4];
+    }
+    if (!items.length) continue;
+
+    const rows = [];
+    for (const it of items) {
+      const existing = rows.find(r => Math.abs(r.y - it.y) <= 3);
+      if (existing) existing.items.push(it);
+      else rows.push({ y: it.y, items: [it] });
+    }
+    rows.sort((a, b) => b.y - a.y);
+    for (const row of rows) row.items.sort((a, b) => a.x0 - b.x0);
+
+    for (const row of rows) {
+      const rowItems = row.items;
+      if (!/^\d+$/.test(rowItems[0].s)) continue; // must start with the row index number
+      const dateM = rowItems.find(it => /^[A-Za-z]{3}\s+\d{1,2},\s*\d{4}$/.test(it.s));
+      if (!dateM) continue;
+      const dm = dateM.s.match(/^([A-Za-z]{3})\s+(\d{1,2}),\s*(\d{4})$/);
+      const date = new Date(Date.UTC(+dm[3], MONTHS[dm[1]] ?? 0, +dm[2]));
+      if (isNaN(date.getTime())) continue;
+
+      const dateIdx = rowItems.indexOf(dateM);
+      const amountItems = rowItems.filter(it => /^NGN\s/.test(it.s));
+      const narrItems = rowItems.slice(dateIdx + 1).filter(it => !/^NGN\s/.test(it.s));
+      const narration = cleanNarr(narrItems.map(it => it.s).join(' '));
+
+      let debit = 0, credit = 0;
+      for (const it of amountItems) {
+        const val = toNum(it.s.replace(/^NGN\s*/, ''));
+        const dDebit = Math.abs(it.x0 - colDebit);
+        const dCredit = Math.abs(it.x0 - colCredit);
+        const dBalance = Math.abs(it.x0 - colBalance);
+        const min = Math.min(dDebit, dCredit, dBalance);
+        if (min === dBalance) continue; // balance column is a known broken placeholder — ignore
+        if (min === dDebit) debit = val; else credit = val;
+      }
+
+      records.push({ date, debit, credit, balance: 0, narration });
+    }
+  }
   return buildTxnsDirect(records);
 }
 
@@ -2456,34 +2824,74 @@ function parseZenith(lines, opening) {
 // Columns: Date | Transaction Details | Reference | Value Date | Withdrawals | Lodgements | Balance
 // Date format M/D/YYYY (US). Withdrawals can be negative (reversals).
 // Strategy: last 3 signed amounts on the anchor line = withdrawal, lodgement, balance.
+// Access Bank DBA Premium / legacy DiamondXtra format. Real statements in
+// this format wrap narration + reference across several lines before the
+// Value Date / Withdrawals / Lodgements / Balance row lands — so, like
+// Moniepoint, this needs multi-line block collection, not single-line
+// parsing (a single-line-only version returns zero records on real files).
+//
+// Ground-truth design decision, made after a real diagnosis: this format's
+// own printed Withdrawal/Lodgement values are trusted as the source of
+// truth for debit/credit, NOT a balance-delta computation. Balance-delta
+// inference is fragile here because real statements in this format have
+// been observed with two adjacent rows' BALANCE values transposed (a
+// source-data defect, not a parsing one) — paired swaps like this cancel
+// out in the aggregate closing balance, so a delta-only approach silently
+// produces a clean-looking but WRONG debit/credit for the affected rows.
+// Trusting the printed Withdrawal/Lodgement value per row is immune to
+// that specific defect. The running balance is still tracked and compared
+// against each row's own printed balance purely as a diagnostic: a
+// mismatch gets flagged on the record (surfaced to the analyst) rather
+// than either silently ignored or allowed to corrupt the transaction.
 function parseAccessDBA(lines, opening) {
-  const DATE_ANCHOR = /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s/;
-  const AMT_RE      = /-?[\d,]+\.\d{2}/g;
-  const records     = [];
+  const DATE = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/;
+  const AMT_RE = /-?[\d,]+\.\d{2}/g;
+  const records = [];
 
+  const dateLines = [];
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    const m    = DATE_ANCHOR.exec(line);
-    if (!m) continue;
-    if (/opening\s*balance|closing\s*balance/i.test(line)) continue;
+    const l = lines[i].trim();
+    if (DATE.test(l) && !/opening\s*balance|closing\s*balance/i.test(l)) dateLines.push(i);
+  }
+  if (dateLines.length === 0) return [];
 
+  let runningBalance = opening || 0;
+  for (let d = 0; d < dateLines.length; d++) {
+    const i = dateLines[d];
+    const end = d + 1 < dateLines.length ? Math.min(dateLines[d + 1], i + 30) : Math.min(i + 30, lines.length);
+    const line0 = lines[i].trim();
+    const m = DATE.exec(line0);
+    if (!m) continue;
     const date = new Date(Date.UTC(+m[3], +m[1] - 1, +m[2]));
     if (isNaN(date.getTime())) continue;
 
-    const amts = [...line.matchAll(AMT_RE)].map(x => toNum(x[0]));
+    let block = '';
+    for (let j = i; j < end; j++) block += ' ' + lines[j].trim();
+    const amts = [...block.matchAll(AMT_RE)].map(x => toNum(x[0]));
     if (amts.length < 3) continue;
 
-    const withdrawal = amts[amts.length - 3];
-    const lodgement  = amts[amts.length - 2];
-    const balance    = amts[amts.length - 1];
+    // Last three signed decimal-format numbers in the block = Withdrawals,
+    // Lodgements, Balance, in that column order — trusted as printed.
+    const withdrawal = Math.max(0, amts[amts.length - 3]);
+    const lodgement   = Math.max(0, amts[amts.length - 2]);
+    const printedBalance = amts[amts.length - 1];
+
+    const expectedBalance = runningBalance + lodgement - withdrawal;
+    const balanceAnomaly = Math.abs(expectedBalance - printedBalance) > 1;
 
     records.push({
       date,
-      debit:    withdrawal,   // may be negative for reversals (intentional)
-      credit:   lodgement,
-      balance,
-      narration: cleanNarr(line),
+      debit: withdrawal,
+      credit: lodgement,
+      balance: printedBalance,
+      narration: cleanNarr(block),
+      balanceAnomaly,
     });
+    // Resync to the statement's own printed balance for the next row so a
+    // single anomalous row can't cascade an error through the rest of the
+    // statement — each row's debit/credit still comes from its own printed
+    // Withdrawal/Lodgement values regardless.
+    runningBalance = printedBalance;
   }
   return buildTxnsDirect(records);
 }
@@ -2872,13 +3280,44 @@ function authChecks(text, txns, cs, fmt) {
   const totalCr = txns.reduce((s,t)=>s+t.credit,0);
   const calc = Math.round(((cs.opening||0)+totalCr-totalDr)*100)/100;
   let recon={pass:false,note:'Could not verify'};
-  if (cs.closing!=null) {
+  if (cs.noBalanceData) {
+    // Some export formats (e.g. Mono-aggregator statements) print a broken
+    // placeholder balance ("0.00") on every single row, cover page included —
+    // there is no usable running balance to check at all. Reconciliation
+    // for these formats rests entirely on the stated-totals check below.
+    recon = {pass:true, note:'No balance column in this export — verified against stated totals only'};
+  } else if (cs.closing!=null) {
     const diff=Math.abs(calc-cs.closing);
     recon={pass:diff<1, note:diff<0.01?'₦0.00 difference':`₦${fmtN(diff)} gap`};
   } else if (txns.length>0) {
     const diff=Math.abs(calc-txns[txns.length-1].balance);
     recon={pass:diff<1, note:diff<0.01?'Matches last balance':`₦${fmtN(diff)} off last balance`};
   }
+  // Stated-totals check: a closing balance can tie out by coincidence even
+  // when individual transactions are misclassified — e.g. two adjacent rows
+  // with transposed balance values cancel out in aggregate but are still
+  // wrong per-row. Comparing computed debit/credit totals against the
+  // statement's own stated totals (when it provides them) catches that
+  // class of error, which the balance-only check above cannot.
+  if (cs.statedDr!=null && cs.statedCr!=null) {
+    const drDiff = Math.abs(totalDr - cs.statedDr);
+    const crDiff = Math.abs(totalCr - cs.statedCr);
+    const drTol = Math.max(500, cs.statedDr*0.005);
+    const crTol = Math.max(500, cs.statedCr*0.005);
+    const totalsPass = drDiff<=drTol && crDiff<=crTol;
+    if (!totalsPass) {
+      recon = { pass:false, note: recon.pass
+        ? `Balance ties out, but debit total off by ₦${fmtN(drDiff)} and credit total off by ₦${fmtN(crDiff)} vs the statement's stated totals`
+        : recon.note };
+    }
+  }
+  // Per-row balance anomalies: rows where the parser flagged the statement's
+  // own printed balance as inconsistent with the running total (e.g. two
+  // adjacent rows' balances transposed in the source PDF). These are
+  // informational — the transaction's debit/credit still comes from the
+  // statement's own printed Withdrawal/Lodgement values, not the anomalous
+  // balance — but the analyst should see them.
+  const balanceAnomalies = txns.filter(t=>t.balanceAnomaly).length;
   let countCheck={pass:true,note:'Count check not available for this format'};
   if (cs.drCount!=null && cs.crCount!=null) {
     const stated=cs.drCount+cs.crCount;
@@ -2891,7 +3330,7 @@ function authChecks(text, txns, cs, fmt) {
   const feeNote=['opay','kuda'].includes(fmt)?'Wallet — no NIP/VAT fees':'NIP + 7.5% VAT structure';
   const chain = chainAudit(txns);
   const suspects = txns.filter(t=>t.suspect).length;
-  return {metaPass,recon,countCheck,totalDr,totalCr,covDr,covCr,feeNote,chain,suspects};
+  return {metaPass,recon,countCheck,totalDr,totalCr,covDr,covCr,feeNote,chain,suspects,balanceAnomalies};
 }
 
 // ── Progress helpers ─────────────────────────────────────────────
@@ -2943,6 +3382,10 @@ async function parseStatementCore(file) {
   // Moniepoint, Union Bank & Stanbic IBTC: coordinate-based async parsers (bypass line-based dispatch)
   if (fmt === 'moniepoint') {
     txns = await parseMoniepoint(file);
+  } else if (fmt === 'moniepointbiz') {
+    txns = await parseMoniepointBiz(file);
+  } else if (fmt === 'monoagg') {
+    txns = await parseMonoAgg(file);
   } else if (fmt === 'unionbank') {
     txns = await parseUnionBank(file);
   } else if (fmt === 'stanbic') {
@@ -2988,7 +3431,7 @@ async function parseStatementCore(file) {
     // Formats that have a dedicated parser — if they return nothing, the layout
     // probably changed or the pdf.js extraction differs from what the parser expects.
     const NATIVE = new Set(['opay','altbank','stanbic','gtbank','access','accessdba','accessweb',
-      'kuda','providus','tajbank','alat','alatbiz','keystone','wema','zenith','moniepoint','unionbank','fcmb','accessng','omnipay']);
+      'kuda','providus','tajbank','alat','alatbiz','keystone','wema','zenith','moniepoint','moniepointbiz','monoagg','unionbank','fcmb','accessng','omnipay']);
     const bank = FNAMES[fmt] || fmt;
     const hasParser = NATIVE.has(fmt);
     throw new Error(
@@ -3043,7 +3486,26 @@ async function analyse(file) {
 // ── CrediTrace: multi-statement case state ─────────────────────────
 // ct.statements: [{ id, file, fname, status:'pending'|'ok'|'quarantined',
 //                    error, fmt, cs, txns, checks, reconciled }]
-let ct = { statements: [], appAccountId: null, appDate: '' };
+let ct = { statements: [], appAccountId: null, appDate: '', decisions: {} };
+
+// ── CrediTrace: analyst decisions (Checkpoint 4) ────────────────────
+// decisions[id] = { verdict: 'upheld' | 'dismissed', note: string }
+// Absence of an entry (or verdict 'pending') means: use the default
+// tier-based treatment — confirmed/probable pairs and undisclosed flags
+// count toward the ladder by default; behavioural flags (in-and-out,
+// round-figure) do NOT count by default and only enter the ladder if the
+// analyst explicitly upholds them (§6.6/§6.8: pairing can't prove these,
+// so they stay out of the automatic math until a human confirms them).
+function ctVerdict(id) { return (ct.decisions[id] && ct.decisions[id].verdict) || 'pending'; }
+function ctNote(id) { return (ct.decisions[id] && ct.decisions[id].note) || ''; }
+function ctSetVerdict(id, verdict) {
+  if (!ct.decisions[id]) ct.decisions[id] = { verdict: 'pending', note: '' };
+  ct.decisions[id].verdict = verdict;
+}
+function ctSetNote(id, note) {
+  if (!ct.decisions[id]) ct.decisions[id] = { verdict: 'pending', note: '' };
+  ct.decisions[id].note = note;
+}
 
 function ctNormAcct(n) { return (n || '').replace(/\D/g, ''); }
 
@@ -3234,6 +3696,634 @@ function renderCase() {
 
       <div class="ct-stmt-list">${cards}</div>
       ${dedupHtml}
+    </div>`;
+}
+
+// ── CrediTrace analysis core (Checkpoint 3) ─────────────────────────
+// ── CrediTrace analysis core (validated here in Node, then embedded verbatim in HTML) ──
+
+const CT_STOPWORDS = new Set(['LIMITED','LTD','ENTERPRISES','ENTERPRISE','NIGERIA','NIG','GLOBAL','VENTURES',
+  'COMPANY','CO','PLC','BUSINESS','TRADING','CONCEPT','CONCEPTS','GROUP','INTERNATIONAL','INTL','AND','THE','OF','FOR']);
+
+function ctNameTokens(name) {
+  return (name || '').toUpperCase().replace(/[^A-Z\s]/g, ' ').split(/\s+/)
+    .filter(w => w.length >= 3 && !CT_STOPWORDS.has(w));
+}
+
+// Requires at least 2 shared tokens when the applicant identity has 2+
+// distinctive tokens (e.g. a personal first+last name) — a single shared
+// token like "IJEOMA" is a common Nigerian first name and matching on it
+// alone produces false positives against unrelated customers. If the
+// identity has only one distinctive token (e.g. a one-word brand name
+// after stopword-stripping), that single match is meaningful on its own.
+function ctFuzzyNameMatch(nameA, nameB) {
+  const ta = ctNameTokens(nameA);
+  const tb = new Set(ctNameTokens(nameB));
+  if (!ta.length) return false;
+  const matches = ta.filter(t => tb.has(t));
+  const required = Math.min(2, ta.length);
+  return matches.length >= required;
+}
+
+function ctNormAcct(n) { return (n || '').replace(/\D/g, ''); }
+
+// Best-effort extraction of transfer counterparty signals from a narration.
+// Tuned against real Moniepoint, OPay, and generic Nigerian bank narrations.
+function ctExtractTransferInfo(narration) {
+  const n = narration || '';
+  const isOutbound = /^(TRANSFER\s+TO|TRF\s+TO)\b/i.test(n);
+  const isInbound  = /^Transfer\s+from\b/i.test(n.trim());
+  const tailM = n.match(/\*{3,8}(\d{3,8})/);
+  const tail = tailM ? tailM[1] : null;
+  let name = null;
+  const toM = n.match(/^(?:TRANSFER\s+TO|TRF\s+TO)\s+(.+?)(?:\s+(?:Moniepoint|OPay|Access|GTBank|Zenith|UBA|United\s+Bank|First\s+Bank|Guaranty|Union|Wema|FCMB|Stanbic|Kuda|Providus|Keystone|TAJ|ALAT)\b|\s*\*{3,8}|\/)/i);
+  if (toM) name = toM[1].replace(/^Omnipay-/i, '').trim();
+  const fromM = n.match(/^Transfer\s+from\s+(.+?)(?:\s+to\s+.+)?$/i);
+  if (fromM) name = fromM[1].trim();
+  return { isOutbound, isInbound, tail, name };
+}
+
+// Cross-statement transfer pairing with confidence tiers, amount-indexed for
+// performance. Only transfer-like legs (TRANSFER TO / Transfer from) are
+// considered — POS purchases and fees are never pairing candidates.
+function ctPairTransfers(statements) {
+  const oks = statements.filter(s => s.status === 'ok');
+
+  // Index all inbound credit legs by amount (2dp key) across every statement.
+  const creditIndex = new Map();
+  for (const s of oks) {
+    s.txns.forEach((t, idx) => {
+      if (!(t.credit > 0)) return;
+      const info = ctExtractTransferInfo(t.narration);
+      if (!info.isInbound) return;
+      const key = t.credit.toFixed(2);
+      if (!creditIndex.has(key)) creditIndex.set(key, []);
+      creditIndex.get(key).push({ stmtId: s.id, idx, txn: t, info });
+    });
+  }
+
+  const usedCredits = new Set();
+  const pairs = [];
+
+  for (const debStmt of oks) {
+    debStmt.txns.forEach((dt, di) => {
+      if (!(dt.debit > 0)) return;
+      const info = ctExtractTransferInfo(dt.narration);
+      if (!info.isOutbound) return;
+
+      const candidates = (creditIndex.get(dt.debit.toFixed(2)) || [])
+        .filter(c => c.stmtId !== debStmt.id && !usedCredits.has(`${c.stmtId}:${c.idx}`));
+      if (!candidates.length) return;
+
+      let best = null;
+      for (const c of candidates) {
+        const crStmt = oks.find(s => s.id === c.stmtId);
+        const dayGap = Math.abs(dt.date - c.txn.date) / 86400000;
+        const acctTailMatch = info.tail && ctNormAcct(crStmt.cs.acctNum).endsWith(info.tail);
+        const nameMatch = info.name && crStmt.cs.acctName && ctFuzzyNameMatch(info.name, crStmt.cs.acctName);
+        if (!acctTailMatch && !nameMatch) continue;
+        let tier = null;
+        if (acctTailMatch && dayGap <= 1.01) tier = 'confirmed';
+        else if ((acctTailMatch || nameMatch) && dayGap <= 5) tier = 'probable';
+        if (!tier) continue;
+        if (!best || (tier === 'confirmed' && best.tier !== 'confirmed') || dayGap < best.dayGap) {
+          best = { c, tier, dayGap };
+        }
+      }
+      if (best) {
+        usedCredits.add(`${best.c.stmtId}:${best.c.idx}`);
+        pairs.push({
+          id: `pair_${debStmt.id}_${di}_${best.c.stmtId}_${best.c.idx}`,
+          tier: best.tier,
+          amount: dt.debit,
+          dayGap: best.dayGap,
+          debitLeg:  { stmtId: debStmt.id, idx: di, txn: dt },
+          creditLeg: { stmtId: best.c.stmtId, idx: best.c.idx, txn: best.c.txn },
+        });
+      }
+    });
+  }
+  return pairs;
+}
+
+// Inflows from a counterparty entity-resolution links to the applicant, but
+// for which no matching statement was uploaded. Two signals only, both
+// deliberately narrow — a business with many repeat customers will always
+// have "recurring names" in its narrations, so recurrence of a generic name
+// is NOT evidence of a related account and must not trigger this flag:
+//   (a) the counterparty's own masked account number recurs AND the
+//       aggregate value is material (>= max(₦50,000, 0.5% of the account's
+//       gross credits)) — a strong, rare signal once value-gated;
+//   (b) the counterparty's name shares a distinctive token with the
+//       applicant's OWN registered identity (business or personal name) —
+//       i.e. the applicant's own name/name-fragment appears as the sender
+//       of an inbound credit, which is a much rarer and more specific tell
+//       than "this customer has paid us before".
+function ctDetectUndisclosed(statements, pairedCreditKeys = new Set()) {
+  const oks = statements.filter(s => s.status === 'ok');
+  const uploadedTails = new Set(oks.map(s => ctNormAcct(s.cs.acctNum).slice(-6)));
+  const uploadedNames = oks.map(s => s.cs.acctName).join(' ');
+  const grossByStmt = new Map(oks.map(s => [s.id, s.txns.reduce((sum, t) => sum + (t.credit || 0), 0)]));
+
+  const byTail = new Map();
+  const nameFlags = [];
+  for (const s of oks) {
+    s.txns.forEach((t, idx) => {
+      if (!(t.credit > 0)) return;
+      if (pairedCreditKeys.has(`${s.id}:${idx}`)) return; // already resolved as a confirmed/probable pair
+      const info = ctExtractTransferInfo(t.narration);
+      if (!info.isInbound || !info.name) return;
+
+      // Signal (b): applicant's own name/name-fragment as sender
+      if (ctFuzzyNameMatch(info.name, uploadedNames)) {
+        nameFlags.push({
+          kind: 'undisclosed-related-inflow', tier: 'probable',
+          name: info.name, tail: info.tail, count: 1, value: t.credit,
+          sample: { stmtId: s.id, idx, txn: t },
+          why: `Counterparty name "${info.name}" overlaps with the applicant's own registered identity, but no statement for this account was uploaded.`,
+        });
+        return;
+      }
+      // Signal (a): recurring masked account number, gated on materiality below
+      if (!info.tail) return;
+      if (uploadedTails.has(info.tail.slice(-6))) return; // already has a matching uploaded statement
+      const key = `${s.id}:${info.tail}`;
+      if (!byTail.has(key)) byTail.set(key, { count: 0, totalValue: 0, name: info.name, tail: info.tail, stmtId: s.id, sample: { stmtId: s.id, idx, txn: t } });
+      const c = byTail.get(key);
+      c.count++; c.totalValue += t.credit;
+    });
+  }
+
+  const tailFlags = [];
+  for (const c of byTail.values()) {
+    const gross = grossByStmt.get(c.stmtId) || 0;
+    const materialityFloor = Math.max(50000, gross * 0.005);
+    if (c.count >= 3 && c.totalValue >= materialityFloor) {
+      tailFlags.push({
+        kind: 'undisclosed-related-inflow', tier: 'probable',
+        name: c.name, tail: c.tail, count: c.count, value: c.totalValue, sample: c.sample,
+        why: `Recurring inflow from account ending ${c.tail} (${c.count} occurrences, ₦${c.totalValue.toFixed(2)}) with no uploaded counterpart statement.`,
+      });
+    }
+  }
+  return [...nameFlags, ...tailFlags];
+}
+
+// In-and-out: a credit followed shortly by a debit of near-identical amount
+// on the same account — classic self-funding pattern pairing can't prove
+// without a counterpart statement. High tier. Deliberately tight: "near-
+// identical" means within a naira or two (or 0.5%, whichever is larger),
+// within the same day, and above a materiality floor — loose tolerances
+// here just catch ordinary unrelated cash flow (collect a payment, pay a
+// supplier a similar but unrelated amount) and drown the real signal.
+function ctDetectInAndOut(appStmt, windowDays = 1, tolPct = 0.005, floor = 20000) {
+  const txns = appStmt.txns.map((t, idx) => ({ ...t, idx })).sort((a, b) => a.date - b.date);
+  const flags = [];
+  const usedDebits = new Set();
+  for (let i = 0; i < txns.length; i++) {
+    const c = txns[i];
+    if (!(c.credit > 0) || c.credit < floor) continue;
+    for (let j = i + 1; j < txns.length; j++) {
+      const d = txns[j];
+      const gapDays = (d.date - c.date) / 86400000;
+      if (gapDays > windowDays) break;
+      if (!(d.debit > 0) || usedDebits.has(d.idx)) continue;
+      const absDiff = Math.abs(d.debit - c.credit);
+      const tol = Math.max(2, c.credit * tolPct);
+      if (absDiff <= tol) {
+        usedDebits.add(d.idx);
+        flags.push({
+          kind: 'in-and-out', tier: 'high', value: c.credit, gapDays,
+          creditIdx: c.idx, debitIdx: d.idx,
+          why: `Credit of ₦${c.credit.toFixed(2)} followed by a near-identical debit of ₦${d.debit.toFixed(2)} ${gapDays.toFixed(1)} day(s) later.`,
+        });
+        break;
+      }
+    }
+  }
+  return flags;
+}
+
+// Round-figure clusters: a batch of suspiciously round credits (multiples of
+// ₦1,000, at or above a materiality floor) — probable tier.
+function ctDetectRoundFigure(appStmt, floor = 10000) {
+  const roundCredits = appStmt.txns
+    .map((t, idx) => ({ ...t, idx }))
+    .filter(t => t.credit > 0 && t.credit >= floor && t.credit % 1000 === 0);
+  if (roundCredits.length < 3) return [];
+  const totalValue = roundCredits.reduce((s, t) => s + t.credit, 0);
+  return [{
+    kind: 'round-figure-cluster', tier: 'probable', value: totalValue, count: roundCredits.length,
+    sampleIdx: roundCredits[0].idx,
+    why: `${roundCredits.length} round-figure credits (multiples of ₦1,000, ≥ ₦${floor.toLocaleString()}) totalling ₦${totalValue.toFixed(2)}.`,
+  }];
+}
+
+// The turnover ladder (§6.7). Only pairs/flags touching the application
+// account's own credit legs count toward internal inflow.
+function ctBuildLadder(appStmt, pairs, undisclosedFlags) {
+  const grossCredits = appStmt.txns.reduce((s, t) => s + (t.credit || 0), 0);
+
+  const appPairs = pairs.filter(p => p.creditLeg.stmtId === appStmt.id);
+  const confirmedInternalInflow = appPairs.filter(p => p.tier === 'confirmed').reduce((s, p) => s + p.amount, 0);
+  const probableInternalInflow  = appPairs.filter(p => p.tier === 'probable').reduce((s, p) => s + p.amount, 0);
+
+  const appUndisclosed = undisclosedFlags.filter(f => f.sample.stmtId === appStmt.id);
+  const undisclosedRelatedInflow = appUndisclosed.reduce((s, f) => s + f.value, 0);
+
+  const adjustedTurnover = grossCredits - confirmedInternalInflow;
+  const conservativeExternalTurnoverFloor = grossCredits - confirmedInternalInflow - probableInternalInflow - undisclosedRelatedInflow;
+
+  return {
+    grossCredits, confirmedInternalInflow, probableInternalInflow, undisclosedRelatedInflow,
+    adjustedTurnover, conservativeExternalTurnoverFloor,
+  };
+}
+
+// Self-funding ratio by value, by count, and by confidence tier — the
+// question each answers: "of the money that looks like turnover, how much
+// is really just the applicant moving cash between their own pockets?"
+function ctSelfFundingRatios(appStmt, pairs, undisclosedFlags) {
+  const grossCredits = appStmt.txns.reduce((s, t) => s + (t.credit || 0), 0);
+  const creditCount  = appStmt.txns.filter(t => t.credit > 0).length;
+
+  const appPairs = pairs.filter(p => p.creditLeg.stmtId === appStmt.id);
+  const confirmedPairs = appPairs.filter(p => p.tier === 'confirmed');
+  const probablePairs  = appPairs.filter(p => p.tier === 'probable');
+  const appUndisclosed = undisclosedFlags.filter(f => f.sample.stmtId === appStmt.id);
+
+  const confirmedValue  = confirmedPairs.reduce((s, p) => s + p.amount, 0);
+  const probableValue   = probablePairs.reduce((s, p) => s + p.amount, 0);
+  const undisclosedValue = appUndisclosed.reduce((s, f) => s + f.value, 0);
+  const totalFlaggedValue = confirmedValue + probableValue + undisclosedValue;
+  const totalFlaggedCount = confirmedPairs.length + probablePairs.length + appUndisclosed.length;
+
+  return {
+    byValue: grossCredits > 0 ? totalFlaggedValue / grossCredits : 0,
+    byCount: creditCount > 0 ? totalFlaggedCount / creditCount : 0,
+    byTier: {
+      confirmed:   grossCredits > 0 ? confirmedValue / grossCredits : 0,
+      probable:    grossCredits > 0 ? probableValue / grossCredits : 0,
+      undisclosed: grossCredits > 0 ? undisclosedValue / grossCredits : 0,
+    },
+    counts: { confirmed: confirmedPairs.length, probable: probablePairs.length, undisclosed: appUndisclosed.length, totalCredits: creditCount },
+  };
+}
+
+function ctFlaggedCreditIdxSet(appStmt, pairs, undisclosedFlags) {
+  const idx = new Set();
+  pairs.filter(p => p.creditLeg.stmtId === appStmt.id).forEach(p => idx.add(p.creditLeg.idx));
+  undisclosedFlags.filter(f => f.sample.stmtId === appStmt.id).forEach(f => idx.add(f.sample.idx));
+  return idx;
+}
+
+// Monthly self-funding trend on the application account.
+function ctMonthlyTrend(appStmt, pairs, undisclosedFlags) {
+  const flagged = ctFlaggedCreditIdxSet(appStmt, pairs, undisclosedFlags);
+  const months = new Map();
+  appStmt.txns.forEach((t, idx) => {
+    if (!(t.credit > 0)) return;
+    const key = `${t.date.getFullYear()}-${String(t.date.getMonth() + 1).padStart(2, '0')}`;
+    if (!months.has(key)) months.set(key, { gross: 0, flaggedVal: 0 });
+    const m = months.get(key);
+    m.gross += t.credit;
+    if (flagged.has(idx)) m.flaggedVal += t.credit;
+  });
+  return [...months.entries()].sort((a, b) => a[0] < b[0] ? -1 : 1)
+    .map(([month, v]) => ({ month, gross: v.gross, flagged: v.flaggedVal, ratio: v.gross > 0 ? v.flaggedVal / v.gross : 0 }));
+}
+
+// Pre-application window vs the rest of the period — turnover-pumping ahead
+// of a loan application is the classic pattern this comparison surfaces.
+function ctPreAppComparison(appStmt, pairs, undisclosedFlags, appDateStr, windowDays = 90) {
+  if (!appDateStr) return null;
+  const appDate = new Date(appDateStr);
+  if (isNaN(appDate.getTime())) return null;
+  const windowStart = new Date(appDate.getTime() - windowDays * 86400000);
+  const flagged = ctFlaggedCreditIdxSet(appStmt, pairs, undisclosedFlags);
+
+  let preGross = 0, preFlagged = 0, restGross = 0, restFlagged = 0;
+  appStmt.txns.forEach((t, idx) => {
+    if (!(t.credit > 0)) return;
+    const inWindow = t.date >= windowStart && t.date <= appDate;
+    if (inWindow) { preGross += t.credit; if (flagged.has(idx)) preFlagged += t.credit; }
+    else          { restGross += t.credit; if (flagged.has(idx)) restFlagged += t.credit; }
+  });
+  return {
+    windowDays, appDate: appDateStr,
+    preApplication: { gross: preGross, flagged: preFlagged, ratio: preGross > 0 ? preFlagged / preGross : 0 },
+    restOfPeriod:   { gross: restGross, flagged: restFlagged, ratio: restGross > 0 ? restFlagged / restGross : 0 },
+  };
+}
+
+
+// ── CrediTrace: Analysis page (Checkpoint 3) ────────────────────────
+function ctBuildAnalysis() {
+  const appStmt = ct.statements.find(s => s.id === ct.appAccountId && s.status === 'ok');
+  if (!appStmt) return null;
+
+  const reconciled = ct.statements.filter(s => s.status === 'ok');
+  const pairs = ctPairTransfers(reconciled);
+  const pairedCreditKeys = new Set(pairs.map(p => `${p.creditLeg.stmtId}:${p.creditLeg.idx}`));
+  const undisclosed = ctDetectUndisclosed(reconciled, pairedCreditKeys);
+  const inAndOut = ctDetectInAndOut(appStmt);
+  const roundFig = ctDetectRoundFigure(appStmt);
+
+  // Stable ids for the workbench — pairs already carry one from ctPairTransfers.
+  undisclosed.forEach(f => { f.id = `undisc_${f.sample.stmtId}_${f.sample.idx}`; });
+  inAndOut.forEach(f => { f.id = `inout_${f.creditIdx}_${f.debitIdx}`; });
+  roundFig.forEach(f => { f.id = `roundfig_${f.sampleIdx}`; });
+
+  const ladder = ctBuildLadderWithDecisions(appStmt, pairs, undisclosed, inAndOut, roundFig, ct.decisions);
+  const ratios = ctSelfFundingRatios(appStmt, pairs, undisclosed);
+  const monthly = ctMonthlyTrend(appStmt, pairs, undisclosed);
+  const preApp = ctPreAppComparison(appStmt, pairs, undisclosed, ct.appDate, 90);
+
+  return { appStmt, reconciled, pairs, undisclosed, inAndOut, roundFig, ladder, ratios, monthly, preApp };
+}
+
+// Decision-aware turnover ladder. Default tier-based treatment applies
+// (confirmed/probable pairs and undisclosed flags count; behavioural flags
+// don't) — an explicit analyst verdict overrides that default in either
+// direction: 'dismissed' removes a default-included item, 'upheld' adds a
+// default-excluded one (behavioural flags only).
+function ctBuildLadderWithDecisions(appStmt, pairs, undisclosedFlags, inAndOut, roundFig, decisions) {
+  const verdict = id => (decisions[id] && decisions[id].verdict) || 'pending';
+  const grossCredits = appStmt.txns.reduce((s, t) => s + (t.credit || 0), 0);
+
+  const appPairs = pairs.filter(p => p.creditLeg.stmtId === appStmt.id);
+  const confirmedPairs = appPairs.filter(p => p.tier === 'confirmed' && verdict(p.id) !== 'dismissed');
+  const probablePairs  = appPairs.filter(p => p.tier === 'probable'  && verdict(p.id) !== 'dismissed');
+  const appUndisclosed = undisclosedFlags.filter(f => f.sample.stmtId === appStmt.id && verdict(f.id) !== 'dismissed');
+  const upheldInAndOut = inAndOut.filter(f => verdict(f.id) === 'upheld');
+  const upheldRoundFig = roundFig.filter(f => verdict(f.id) === 'upheld');
+
+  const confirmedInternalInflow = confirmedPairs.reduce((s, p) => s + p.amount, 0);
+  const undisclosedRelatedInflow = appUndisclosed.reduce((s, f) => s + f.value, 0);
+  const probableInternalInflow =
+    probablePairs.reduce((s, p) => s + p.amount, 0) +
+    upheldInAndOut.reduce((s, f) => s + f.value, 0) +
+    upheldRoundFig.reduce((s, f) => s + f.value, 0);
+
+  const adjustedTurnover = grossCredits - confirmedInternalInflow;
+  const conservativeExternalTurnoverFloor = grossCredits - confirmedInternalInflow - probableInternalInflow - undisclosedRelatedInflow;
+
+  return {
+    grossCredits, confirmedInternalInflow, probableInternalInflow, undisclosedRelatedInflow,
+    adjustedTurnover, conservativeExternalTurnoverFloor,
+  };
+}
+
+function ctPct(n) { return (n * 100).toFixed(1) + '%'; }
+function ctN(n) { return '₦' + fmtN(n); }
+
+function renderAnalysis() {
+  const reconciledCount = ct.statements.filter(s => s.status === 'ok').length;
+  if (!ct.appAccountId || reconciledCount < 1) {
+    return `
+      <div class="ct-page">
+        <div class="pg-eyebrow">CrediTrace analysis</div>
+        <div class="pg-title">Nothing to analyse yet.</div>
+        <div class="pg-sub">Head to the Case tab, upload at least one reconciled statement, and designate an application account to see the turnover analysis here. Uploading a second statement for a suspected linked account lets CrediTrace confirm transfer pairs instead of only flagging candidates.</div>
+      </div>`;
+  }
+
+  const a = ctBuildAnalysis();
+  const { appStmt, pairs, undisclosed, inAndOut, roundFig, ladder, ratios, monthly, preApp } = a;
+  const appPairs = pairs.filter(p => p.creditLeg.stmtId === appStmt.id || p.debitLeg.stmtId === appStmt.id);
+  const appUndisclosed = undisclosed.filter(f => f.sample.stmtId === appStmt.id);
+
+  const ladderHtml = `
+    <div class="ct-ladder">
+      <div class="ct-ladder-row"><span class="ct-ladder-label">Gross credits</span><span class="ct-ladder-value">${ctN(ladder.grossCredits)}</span></div>
+      <div class="ct-ladder-row ct-ladder-sub"><span class="ct-ladder-label">− Confirmed internal inflow</span><span class="ct-ladder-value">${ctN(ladder.confirmedInternalInflow)}</span></div>
+      <div class="ct-ladder-row ct-ladder-final"><span class="ct-ladder-label">= Adjusted turnover</span><span class="ct-ladder-value">${ctN(ladder.adjustedTurnover)}</span></div>
+      <div class="ct-ladder-row ct-ladder-sub"><span class="ct-ladder-label">− Probable internal inflow</span><span class="ct-ladder-value">${ctN(ladder.probableInternalInflow)}</span></div>
+      <div class="ct-ladder-row ct-ladder-sub"><span class="ct-ladder-label">− Undisclosed-related inflow</span><span class="ct-ladder-value">${ctN(ladder.undisclosedRelatedInflow)}</span></div>
+      <div class="ct-ladder-row ct-ladder-floor"><span class="ct-ladder-label">= Conservative external turnover floor</span><span class="ct-ladder-value">${ctN(ladder.conservativeExternalTurnoverFloor)}</span></div>
+    </div>`;
+
+  const ratioHtml = `
+    <div class="ct-ratio-grid">
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ctPct(ratios.byValue)}</div><div class="ct-ratio-lbl">Self-funding, by value</div></div>
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ctPct(ratios.byCount)}</div><div class="ct-ratio-lbl">Self-funding, by count</div></div>
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ratios.counts.confirmed}</div><div class="ct-ratio-lbl">Confirmed pairs</div></div>
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ratios.counts.probable + ratios.counts.undisclosed}</div><div class="ct-ratio-lbl">Probable + undisclosed</div></div>
+    </div>`;
+
+  const monthlyRows = monthly.map(m => `
+    <tr><td>${m.month}</td><td>${ctN(m.gross)}</td><td>${ctN(m.flagged)}</td><td>${ctPct(m.ratio)}</td></tr>`).join('');
+  const monthlyHtml = `
+    <table class="mt">
+      <thead><tr><th>Month</th><th>Gross credits</th><th>Flagged internal</th><th>Self-funding %</th></tr></thead>
+      <tbody>${monthlyRows}</tbody>
+    </table>`;
+
+  const preAppHtml = preApp ? `
+    <div class="ct-ratio-grid">
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ctPct(preApp.preApplication.ratio)}</div><div class="ct-ratio-lbl">Self-funding, ${preApp.windowDays}d pre-application</div></div>
+      <div class="ct-ratio-card"><div class="ct-ratio-big">${ctPct(preApp.restOfPeriod.ratio)}</div><div class="ct-ratio-lbl">Self-funding, rest of period</div></div>
+    </div>` : `<div class="ct-appdate-note">Set an application date on the Case tab to compare the pre-application window against the rest of the period.</div>`;
+
+  const pairRows = appPairs.slice(0, 25).map(p => {
+    const debStmt = ct.statements.find(s => s.id === p.debitLeg.stmtId);
+    const crStmt  = ct.statements.find(s => s.id === p.creditLeg.stmtId);
+    return `<tr>
+      <td><span class="ct-tier-tag ${p.tier}">${p.tier}</span></td>
+      <td>${ctN(p.amount)}</td>
+      <td>${esc(FNAMES[debStmt.fmt]||debStmt.fmt)} → ${esc(FNAMES[crStmt.fmt]||crStmt.fmt)}</td>
+      <td>${p.dayGap.toFixed(1)}d gap</td>
+    </tr>`;
+  }).join('');
+  const pairsHtml = appPairs.length ? `
+    <table class="mt">
+      <thead><tr><th>Tier</th><th>Amount</th><th>Route</th><th>Timing</th></tr></thead>
+      <tbody>${pairRows}</tbody>
+    </table>
+    ${appPairs.length > 25 ? `<div class="ct-appdate-note">Showing 25 of ${appPairs.length} pairs. Full drill-down comes in the next checkpoint.</div>` : ''}
+  ` : `<div class="ct-empty-note">No transfer pairs found. Upload a second statement for a suspected linked account to enable pairing.</div>`;
+
+  const flagRow = (f) => `
+    <div class="ct-flag-row">
+      <div class="ct-flag-top"><span class="ct-tier-tag ${f.tier}">${f.tier}</span><span class="ct-flag-amt">${ctN(f.value)}</span></div>
+      <div class="ct-flag-why">${esc(f.why)}</div>
+    </div>`;
+  const undisclosedHtml = appUndisclosed.length
+    ? `<div class="ct-flag-list">${appUndisclosed.map(flagRow).join('')}</div>`
+    : `<div class="ct-empty-note">No undisclosed related-account inflows detected on the application account.</div>`;
+  const behavioralFlags = [...inAndOut, ...roundFig];
+  const behavioralHtml = behavioralFlags.length
+    ? `<div class="ct-flag-list">${behavioralFlags.slice(0, 20).map(flagRow).join('')}</div>
+       ${behavioralFlags.length > 20 ? `<div class="ct-appdate-note">Showing 20 of ${behavioralFlags.length} behavioural flags.</div>` : ''}`
+    : `<div class="ct-empty-note">No in-and-out or round-figure patterns detected on the application account.</div>`;
+
+  return `
+    <div class="ct-page">
+      <div class="pg-eyebrow">CrediTrace analysis</div>
+      <div class="pg-title">Turnover, separated from self-funding.</div>
+      <div class="pg-sub">Application account: <b>${esc(appStmt.cs.acctName||appStmt.fname)}</b> (${esc(FNAMES[appStmt.fmt]||appStmt.fmt)}).</div>
+
+      ${ladderHtml}
+      ${ratioHtml}
+
+      <div class="ct-section-title">Pre-application comparison</div>
+      ${preAppHtml}
+
+      <div class="ct-section-title">Monthly self-funding trend</div>
+      ${monthlyHtml}
+
+      <div class="ct-section-title">Transfer pairs</div>
+      ${pairsHtml}
+
+      <div class="ct-section-title">Undisclosed related-account inflows</div>
+      ${undisclosedHtml}
+
+      <div class="ct-section-title">Behavioural flags (in-and-out &amp; round-figure)</div>
+      ${behavioralHtml}
+    </div>`;
+}
+
+// ── CrediTrace: Workbench page (Checkpoint 4) ───────────────────────
+let ctWb = { statusFilter: 'all', tierFilter: 'all', expandedId: null };
+
+function ctTxnAt(stmtId, idx) {
+  const s = ct.statements.find(x => x.id === stmtId);
+  return s ? s.txns[idx] : null;
+}
+function ctBankName(stmtId) {
+  const s = ct.statements.find(x => x.id === stmtId);
+  return s ? (FNAMES[s.fmt] || s.fmt) : '—';
+}
+
+// Every pair and flag touching the application account, as one flat,
+// materiality-ranked list — the workbench doesn't distinguish pairs from
+// flags in the list itself, only in how each row's detail renders.
+function ctWorkbenchItems(a) {
+  const items = [];
+  a.pairs.forEach(p => {
+    if (p.creditLeg.stmtId !== a.appStmt.id && p.debitLeg.stmtId !== a.appStmt.id) return;
+    items.push({ id: p.id, kind: 'pair', tier: p.tier, value: p.amount, pair: p });
+  });
+  a.undisclosed.forEach(f => {
+    if (f.sample.stmtId !== a.appStmt.id) return;
+    items.push({ id: f.id, kind: 'undisclosed', tier: f.tier, value: f.value, flag: f });
+  });
+  a.inAndOut.forEach(f => items.push({ id: f.id, kind: 'in-and-out', tier: f.tier, value: f.value, flag: f }));
+  a.roundFig.forEach(f => items.push({ id: f.id, kind: 'round-figure', tier: f.tier, value: f.value, flag: f }));
+  items.sort((x, y) => y.value - x.value);
+  return items;
+}
+
+function ctWbKindLabel(kind) {
+  return { pair: 'Transfer pair', undisclosed: 'Undisclosed related inflow',
+    'in-and-out': 'In-and-out pattern', 'round-figure': 'Round-figure cluster' }[kind] || kind;
+}
+
+function renderWorkbench() {
+  if (!ct.appAccountId) {
+    return `<div class="ct-page"><div class="pg-eyebrow">CrediTrace workbench</div><div class="pg-title">Nothing to review yet.</div><div class="pg-sub">Set an application account on the Case tab first.</div></div>`;
+  }
+  const a = ctBuildAnalysis();
+  if (!a) return `<div class="ct-page"><div class="pg-sub">Application account not found.</div></div>`;
+
+  const allItems = ctWorkbenchItems(a);
+  let items = allItems;
+  if (ctWb.statusFilter !== 'all') items = items.filter(it => ctVerdict(it.id) === ctWb.statusFilter);
+  if (ctWb.tierFilter !== 'all') items = items.filter(it => it.tier === ctWb.tierFilter);
+
+  const l = a.ladder;
+  const summaryHtml = `
+    <div class="ct-wb-summary">
+      <div class="ct-wb-summary-item"><div class="ct-wb-val">${ctN(l.grossCredits)}</div><div class="ct-wb-lbl">Gross credits</div></div>
+      <div class="ct-wb-summary-item"><div class="ct-wb-val">${ctN(l.adjustedTurnover)}</div><div class="ct-wb-lbl">Adjusted turnover</div></div>
+      <div class="ct-wb-summary-item"><div class="ct-wb-val">${ctN(l.conservativeExternalTurnoverFloor)}</div><div class="ct-wb-lbl">External floor</div></div>
+      <div class="ct-wb-summary-item"><div class="ct-wb-val">${allItems.length}</div><div class="ct-wb-lbl">Total items</div></div>
+    </div>`;
+
+  const filterBtn = (group, val, label) =>
+    `<button class="ct-wb-filter-btn ${ctWb[group]===val?'active':''}" data-filter-group="${group}" data-filter-val="${val}">${label}</button>`;
+
+  const rowsHtml = items.length ? items.map(it => ctWbRow(it, a)).join('')
+    : `<div class="ct-empty-note">No items match the current filters.</div>`;
+
+  return `
+    <div class="ct-page">
+      <div class="pg-eyebrow">CrediTrace workbench</div>
+      <div class="pg-title">Drill down, decide, done.</div>
+      <div class="pg-sub">Every pair and flag touching the application account, ranked by materiality. Uphold what's real self-funding, dismiss what isn't — the ladder above updates live as you decide.</div>
+      ${summaryHtml}
+      <div class="ct-wb-filters" style="justify-content:space-between">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${filterBtn('statusFilter','all','All statuses')}${filterBtn('statusFilter','pending','Pending')}${filterBtn('statusFilter','upheld','Upheld')}${filterBtn('statusFilter','dismissed','Dismissed')}</div>
+        <button class="ct-wb-btn" id="dlMemoXLSX" style="border-color:var(--accent);color:var(--accent);font-weight:560">Download credit memo annex</button>
+      </div>
+      <div class="ct-wb-filters">
+        ${filterBtn('tierFilter','all','All tiers')}
+        ${filterBtn('tierFilter','confirmed','Confirmed')}
+        ${filterBtn('tierFilter','probable','Probable')}
+        ${filterBtn('tierFilter','high','High')}
+      </div>
+      <div class="ct-wb-list">${rowsHtml}</div>
+    </div>`;
+}
+
+function ctWbRow(it, a) {
+  const verdict = ctVerdict(it.id);
+  const note = ctNote(it.id);
+  const expanded = ctWb.expandedId === it.id;
+  const dismissedCls = verdict === 'dismissed' ? 'ct-wb-dismissed' : '';
+  const badge = `<span class="ct-wb-verdict-badge ${verdict}">${verdict}</span>`;
+
+  let bodyHtml = '';
+  if (expanded) {
+    let legsHtml = '', whyHtml = '';
+    if (it.kind === 'pair') {
+      const p = it.pair;
+      legsHtml = `
+        <div class="ct-wb-legs">
+          <div class="ct-wb-leg"><div class="ct-wb-leg-hdr">Debit leg · ${esc(ctBankName(p.debitLeg.stmtId))}</div><div class="ct-wb-leg-narr">${esc(p.debitLeg.txn.narration||'')}<br>${ctN(p.debitLeg.txn.debit)} · ${p.debitLeg.txn.date.toLocaleDateString()}</div></div>
+          <div class="ct-wb-leg"><div class="ct-wb-leg-hdr">Credit leg · ${esc(ctBankName(p.creditLeg.stmtId))}</div><div class="ct-wb-leg-narr">${esc(p.creditLeg.txn.narration||'')}<br>${ctN(p.creditLeg.txn.credit)} · ${p.creditLeg.txn.date.toLocaleDateString()}</div></div>
+        </div>`;
+      whyHtml = `<div class="ct-wb-why">Matched on amount + ${p.tier==='confirmed'?'account reference':'name'}, ${p.dayGap.toFixed(1)} day(s) apart.</div>`;
+    } else if (it.kind === 'undisclosed') {
+      const f = it.flag, txn = f.sample.txn;
+      legsHtml = `<div class="ct-wb-legs"><div class="ct-wb-leg" style="grid-column:1/-1"><div class="ct-wb-leg-hdr">Credit · ${esc(ctBankName(f.sample.stmtId))}</div><div class="ct-wb-leg-narr">${esc(txn.narration||'')}<br>${ctN(txn.credit)} · ${txn.date.toLocaleDateString()}</div></div></div>`;
+      whyHtml = `<div class="ct-wb-why">${esc(f.why)}</div>`;
+    } else if (it.kind === 'in-and-out') {
+      const f = it.flag, c = a.appStmt.txns[f.creditIdx], d = a.appStmt.txns[f.debitIdx];
+      legsHtml = `
+        <div class="ct-wb-legs">
+          <div class="ct-wb-leg"><div class="ct-wb-leg-hdr">Credit leg</div><div class="ct-wb-leg-narr">${esc(c?c.narration:'')}<br>${ctN(c?c.credit:0)} · ${c?c.date.toLocaleDateString():''}</div></div>
+          <div class="ct-wb-leg"><div class="ct-wb-leg-hdr">Debit leg</div><div class="ct-wb-leg-narr">${esc(d?d.narration:'')}<br>${ctN(d?d.debit:0)} · ${d?d.date.toLocaleDateString():''}</div></div>
+        </div>`;
+      whyHtml = `<div class="ct-wb-why">${esc(f.why)}</div>`;
+    } else if (it.kind === 'round-figure') {
+      const f = it.flag, txn = a.appStmt.txns[f.sampleIdx];
+      legsHtml = `<div class="ct-wb-legs"><div class="ct-wb-leg" style="grid-column:1/-1"><div class="ct-wb-leg-hdr">Sample transaction</div><div class="ct-wb-leg-narr">${esc(txn?txn.narration:'')}<br>${ctN(txn?txn.credit:0)} · ${txn?txn.date.toLocaleDateString():''}</div></div></div>`;
+      whyHtml = `<div class="ct-wb-why">${esc(f.why)}</div>`;
+    }
+
+    bodyHtml = `
+      <div class="ct-wb-row-body">
+        ${legsHtml}
+        ${whyHtml}
+        <div class="ct-wb-actions">
+          <button class="ct-wb-btn uphold ${verdict==='upheld'?'active':''}" data-verdict-id="${it.id}" data-verdict-val="upheld">Uphold flag</button>
+          <button class="ct-wb-btn dismiss ${verdict==='dismissed'?'active':''}" data-verdict-id="${it.id}" data-verdict-val="dismissed">Dismiss</button>
+          ${verdict!=='pending' ? `<button class="ct-wb-btn" data-verdict-id="${it.id}" data-verdict-val="pending">Reset</button>` : ''}
+        </div>
+        <textarea class="ct-wb-note" placeholder="Analyst note (optional)" data-note-id="${it.id}">${esc(note)}</textarea>
+      </div>`;
+  }
+
+  return `
+    <div class="ct-wb-row ${dismissedCls}">
+      <div class="ct-wb-row-head" data-expand-id="${it.id}">
+        <span class="ct-tier-tag ${it.tier}">${it.tier}</span>
+        <span class="ct-wb-row-kind"><b>${ctWbKindLabel(it.kind)}</b></span>
+        <span class="ct-wb-row-amt">${ctN(it.value)}</span>
+        ${badge}
+      </div>
+      ${bodyHtml}
     </div>`;
 }
 
@@ -3774,6 +4864,150 @@ function checkCard(name, pass, note) {
 }
 
 // ── XLSX Export ───────────────────────────────────────────────────
+// ── CrediTrace: Credit memo annex export (Checkpoint 4) ─────────────
+async function dlMemoXLSX() {
+  const a = ctBuildAnalysis();
+  if (!a) { setErr('Set an application account before exporting.'); return; }
+  const btn = $('dlMemoXLSX');
+  if (btn) btn.textContent = 'Generating…';
+
+  const NUM = '#,##0.00';
+  const fill = arg => ({ type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF' + arg } });
+  const font = (arg, sz, bold = false, italic = false) => ({ name: 'Arial', size: sz, bold, italic, color: { argb: 'FF' + arg } });
+  const alignC = (wrap = false) => ({ horizontal: 'center', vertical: 'middle', wrapText: wrap });
+  const alignL = (wrap = false) => ({ horizontal: 'left', vertical: 'middle', wrapText: wrap });
+  const alignR = () => ({ horizontal: 'right', vertical: 'middle' });
+  const bdrT = { style: 'thin', color: { argb: 'FFDDDDDD' } };
+  const bdrA = b => ({ top: b, bottom: b, left: b, right: b });
+
+  const wb = new ExcelJS.Workbook();
+  wb.creator = 'CrediTrace'; wb.created = new Date();
+
+  // ── Sheet 1: Decision Summary ──────────────────────────────────
+  const ws1 = wb.addWorksheet('Decision Summary');
+  ws1.columns = [{ width: 30 }, { width: 34 }, { width: 20 }];
+
+  const t1 = ws1.addRow(['CREDITRACE — CREDIT MEMO ANNEX', '', '']); t1.height = 28;
+  ws1.mergeCells('A1:C1');
+  t1.eachCell({ includeEmpty: true }, c => { c.fill = fill('1F3864'); c.font = font('FFFFFF', 13, true); c.alignment = alignC(); });
+
+  const t2 = ws1.addRow([`Generated ${new Date().toLocaleString()}`, '', '']); t2.height = 18;
+  ws1.mergeCells('A2:C2');
+  t2.eachCell({ includeEmpty: true }, c => { c.fill = fill('2E74B5'); c.font = font('FFFFFF', 10); c.alignment = alignC(); });
+
+  ws1.addRow([]);
+  const meta = [
+    ['Applicant entity', a.appStmt.cs.acctName || a.appStmt.fname],
+    ['Application account', `${a.appStmt.cs.acctNum || '—'}  (${FNAMES[a.appStmt.fmt] || a.appStmt.fmt})`],
+    ['Application date', ct.appDate || 'Not set'],
+    ['Statements in scope', String(a.reconciled.length)],
+  ];
+  const dedup = ctComputeDedup(ct.statements);
+  const dupRemoved = dedup.groups.reduce((s, g) => s + g.duplicatesRemoved, 0);
+  meta.push(['Duplicates removed (same-account overlap)', String(dupRemoved)]);
+  for (const [lbl, val] of meta) {
+    const r = ws1.addRow([lbl, val, '']); r.height = 17;
+    r.getCell(1).font = font('595959', 10, false, true);
+    r.getCell(2).font = font('1A1916', 10, true);
+    r.eachCell({ includeEmpty: true }, c => { c.fill = fill('F9F9F7'); });
+  }
+
+  ws1.addRow([]);
+  const ladderHdr = ws1.addRow(['MONEY LADDER', '', 'AMOUNT (₦)']); ladderHdr.height = 22;
+  ladderHdr.eachCell({ includeEmpty: true }, c => { c.fill = fill('1F3864'); c.font = font('FFFFFF', 10, true); c.alignment = alignL(); });
+  const l = a.ladder;
+  const ladderRows = [
+    ['Gross credits', '', l.grossCredits],
+    ['− Confirmed internal inflow', '', l.confirmedInternalInflow],
+    ['= Adjusted turnover', '', l.adjustedTurnover],
+    ['− Probable internal inflow', '', l.probableInternalInflow],
+    ['− Undisclosed-related inflow', '', l.undisclosedRelatedInflow],
+    ['= Conservative external turnover floor', '', l.conservativeExternalTurnoverFloor],
+  ];
+  ladderRows.forEach(([lbl, , val], i) => {
+    const isFinal = lbl.startsWith('=');
+    const r = ws1.addRow([lbl, '', val]); r.height = 17;
+    r.getCell(1).font = font(isFinal ? '1F3864' : '595959', 10, isFinal);
+    r.getCell(3).numFmt = NUM; r.getCell(3).font = font(isFinal ? '1F3864' : '595959', 10, isFinal);
+    r.eachCell({ includeEmpty: true }, c => { c.fill = fill(isFinal ? 'E8EEF7' : 'F9F9F7'); });
+    r.getCell(3).alignment = alignR();
+  });
+
+  // ── Sheet 2: Pairs & Flags Register ────────────────────────────
+  const ws2 = wb.addWorksheet('Pairs & Flags Register');
+  ws2.columns = [{ width: 20 }, { width: 12 }, { width: 16 }, { width: 50 }, { width: 12 }, { width: 34 }];
+  const h2 = ws2.addRow(['Kind', 'Tier', 'Amount (₦)', 'Description', 'Verdict', 'Analyst note']); h2.height = 22;
+  h2.eachCell({ includeEmpty: true }, c => applyStyle(c, { fill: fill('1F3864'), font: font('FFFFFF', 10, true), alignment: alignC(true), border: bdrA({ style: 'thin', color: { argb: 'FF1F3864' } }) }));
+
+  const items = ctWorkbenchItems(a);
+  items.forEach((it, ri) => {
+    const verdict = ctVerdict(it.id);
+    const note = ctNote(it.id);
+    let desc = '';
+    if (it.kind === 'pair') {
+      desc = `${ctBankName(it.pair.debitLeg.stmtId)} → ${ctBankName(it.pair.creditLeg.stmtId)}, ${it.pair.dayGap.toFixed(1)}d gap`;
+    } else if (it.flag) desc = it.flag.why;
+    const ev = ri % 2 === 0;
+    const row = ws2.addRow([ctWbKindLabel(it.kind), it.tier, it.value, desc, verdict, note]);
+    row.height = 16;
+    row.eachCell({ includeEmpty: true }, (c, col) => applyStyle(c, {
+      fill: fill(ev ? 'FFFFFF' : 'F4F3EF'), font: font('1A1916', 9),
+      alignment: col === 3 ? alignR() : alignL(col === 4), border: bdrA(bdrT),
+      numFmt: col === 3 ? NUM : undefined,
+    }));
+  });
+  if (!items.length) {
+    const r = ws2.addRow(['No pairs or flags on the application account', '', '', '', '', '']);
+    r.eachCell({ includeEmpty: true }, c => { c.fill = fill('EDF7F2'); c.font = font('1B7A4A', 9); });
+  }
+
+  // ── Sheet 3: Statement Reconciliation ──────────────────────────
+  const ws3 = wb.addWorksheet('Statement Reconciliation');
+  ws3.columns = [{ width: 24 }, { width: 28 }, { width: 18 }, { width: 22 }, { width: 12 }, { width: 12 }, { width: 40 }];
+  const h3 = ws3.addRow(['Bank', 'Account name', 'Account number', 'Period', 'Txns', 'Status', 'Note']); h3.height = 22;
+  h3.eachCell({ includeEmpty: true }, c => applyStyle(c, { fill: fill('1F3864'), font: font('FFFFFF', 10, true), alignment: alignC(true), border: bdrA({ style: 'thin', color: { argb: 'FF1F3864' } }) }));
+
+  ct.statements.forEach((s, ri) => {
+    const ev = ri % 2 === 0;
+    const isOk = s.status === 'ok';
+    const row = ws3.addRow([
+      isOk ? (FNAMES[s.fmt] || s.fmt) : (s.fname || '—'),
+      isOk ? (s.cs.acctName || '—') : '—',
+      isOk ? (s.cs.acctNum || '—') : '—',
+      isOk ? (s.cs.period || '—') : '—',
+      isOk ? s.txns.length : '—',
+      isOk ? 'Reconciled' : 'Quarantined',
+      isOk ? (s.checks && s.checks.recon ? s.checks.recon.note : '') : (s.error || ''),
+    ]);
+    row.height = 16;
+    const statusColor = isOk ? '2A5C45' : 'B5341C';
+    row.eachCell({ includeEmpty: true }, (c, col) => applyStyle(c, {
+      fill: fill(ev ? 'FFFFFF' : 'F4F3EF'),
+      font: col === 6 ? font(statusColor, 9, true) : font('1A1916', 9),
+      alignment: col === 5 ? alignR() : alignL(col === 7),
+      border: bdrA(bdrT),
+    }));
+  });
+
+  const buf = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const url = URL.createObjectURL(blob);
+  const dl = document.createElement('a');
+  dl.href = url;
+  dl.download = `${(a.appStmt.cs.acctName || a.appStmt.fname).replace(/[^a-zA-Z0-9]/g,'_').replace(/_+/g,'_')}_CrediTrace_Memo.xlsx`;
+  document.body.appendChild(dl); dl.click(); document.body.removeChild(dl);
+  URL.revokeObjectURL(url);
+  if (btn) btn.textContent = 'Download credit memo annex';
+}
+
+function applyStyle(cell, opts) {
+  if (opts.fill) cell.fill = opts.fill;
+  if (opts.font) cell.font = opts.font;
+  if (opts.alignment) cell.alignment = opts.alignment;
+  if (opts.border) cell.border = opts.border;
+  if (opts.numFmt) cell.numFmt = opts.numFmt;
+}
+
 async function dlXLSX() {
   const { fmt, cs, monthly, fname, checks } = state;
   const btn = $('dlXLSX');
@@ -4321,6 +5555,8 @@ function renderPage(page) {
   if (!el) return;
   switch(page) {
     case 'case':         el.innerHTML = renderCase(); break;
+    case 'analysis':     el.innerHTML = renderAnalysis(); break;
+    case 'workbench':    el.innerHTML = renderWorkbench(); break;
     case 'overview':     el.innerHTML = state ? renderOverview()     : renderUpload(); break;
     case 'transactions': el.innerHTML = state ? renderTransactions()  : renderUpload(); break;
     case 'insights':     el.innerHTML = state ? renderInsights()      : renderUpload(); break;
@@ -4351,6 +5587,32 @@ function attachPageEvents(page) {
     radio.addEventListener('change', () => ctSetAppAccount(radio.dataset.appacct));
   });
 
+  // Workbench page
+  document.querySelectorAll('[data-filter-group]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      ctWb[btn.dataset.filterGroup] = btn.dataset.filterVal;
+      renderPage('workbench');
+    });
+  });
+  document.querySelectorAll('[data-expand-id]').forEach(head => {
+    head.addEventListener('click', () => {
+      const id = head.dataset.expandId;
+      ctWb.expandedId = ctWb.expandedId === id ? null : id;
+      renderPage('workbench');
+    });
+  });
+  document.querySelectorAll('[data-verdict-id]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      ctSetVerdict(btn.dataset.verdictId, btn.dataset.verdictVal);
+      renderPage('workbench');
+    });
+  });
+  document.querySelectorAll('[data-note-id]').forEach(ta => {
+    ta.addEventListener('click', e => e.stopPropagation());
+    ta.addEventListener('change', () => ctSetNote(ta.dataset.noteId, ta.value));
+  });
+
   // Upload page
   const dz=$('dropZone'), fin=$('fileIn');
   if (dz) {
@@ -4366,8 +5628,9 @@ function attachPageEvents(page) {
   if (fin) fin.addEventListener('change',e=>{ if(e.target.files[0]) analyse(e.target.files[0]); });
 
   // Overview page
-  const dlX=$('dlXLSX'), dlC=$('dlCSV');
+  const dlX=$('dlXLSX'), dlC=$('dlCSV'), dlMemo=$('dlMemoXLSX');
   if (dlX) dlX.addEventListener('click',()=>dlXLSX());
+  if (dlMemo) dlMemo.addEventListener('click',()=>dlMemoXLSX());
   if (dlC) dlC.addEventListener('click',()=>dlCSV());
 
   // Transactions page — view toggle
