@@ -529,11 +529,20 @@ const FNAMES = {opay:'OPay Wallet',altbank:'Alternative Bank',stanbic:'Stanbic I
   providus:'ProvidusBank',wema:'Wema Bank',tajbank:'TAJBank',alat:'Wema Bank (ALAT)',
   alatbiz:'Wema Bank (ALAT Business)',keystone:'Keystone Bank',
   zenith:'Zenith Bank',moniepoint:'Moniepoint MFB',moniepointbiz:'Moniepoint MFB (Business)',
-  monoagg:'OPay Wallet (via Mono)',
+  monoagg:'Wallet/Bank Statement (via Mono)',
   unionbank:'Union Bank of Nigeria',fcmb:'FCMB (First City Monument Bank)',
   accessng:'Access Bank (NG Statement)',
   omnipay:'OmniPay Wallet',
   generic:'Unknown Bank (generic parse)'};
+
+// Mono-aggregator statements can wrap ANY underlying bank or wallet — the
+// static FNAMES entry above is only a fallback for when extraction fails.
+// Prefer the actual underlying bank name pulled from the statement's own
+// cover page (cs.underlyingBank) wherever cover stats are available.
+function bankLabel(fmtId, cs) {
+  if (fmtId === 'monoagg' && cs && cs.underlyingBank) return `${cs.underlyingBank} (via Mono)`;
+  return FNAMES[fmtId] || fmtId;
+}
 
 // Category colors resolve through CSS custom properties so both themes
 // (light / night ledger) render correctly without re-rendering on toggle.
@@ -960,7 +969,14 @@ function detectFormat(text) {
   // header. This template's own Balance column is a known broken
   // placeholder (always "0.00" on every row, cover page included) — see
   // the noBalanceData handling in extractCoverStats/authChecks.
-  if (/Wallet\s*Account/i.test(t) && /#\s*DATE\s+NARRATION\s+DEBIT\s+CREDIT\s+BALANCE/i.test(t)) return 'monoagg';
+  // Mono-aggregator wallet/bank statement — covers BOTH wallet exports
+  // (OPay, Kuda: "Wallet Account / NGN") and savings/current bank account
+  // exports (Stanbic, GTBank, etc: "Savings / NGN") in the same template.
+  // Anchor on Mono's own "Generated on ... via" cover-page phrase (which
+  // IS extractable text, unlike their logo wordmark, which is not) plus
+  // the numbered transaction header — both present regardless of the
+  // underlying account type.
+  if (/Generated\s+on[\s\S]{0,30}via/i.test(t) && /#\s*DATE\s+NARRATION\s+DEBIT\s+CREDIT\s+BALANCE/i.test(t)) return 'monoagg';
   // Stanbic IBTC — bare bank-name text is not enough on its own: it can
   // appear as a counterparty's institution name on another bank's
   // statement (found on a real Moniepoint business statement where a
@@ -1265,7 +1281,7 @@ function extractCoverStats(text, fmt) {
     // balance-based reconciliation entirely and rely on stated totals.
     const nameM = text.match(/([A-Z][A-Z\s]{4,50})\n\s*Contact\b/);
     const acctM = text.match(/Account\s*Number[A-Za-z]*\s*\n?\s*(\d{6,13})/i);
-    const bankM = text.match(/Account\s*Number[A-Za-z]*\s*\n?\s*\d{6,13}([A-Za-z]+)/i);
+    const bankM = text.match(/Account\s*Number[A-Za-z]*\s*\n?\s*\d{6,13}([A-Za-z][A-Za-z\s]*?)(?:\n|$)/i);
     const amts  = [...text.matchAll(/NGN\s*([\d,]+\.\d{2})/gi)].slice(0,3).map(m => toNum(m[1]));
     const periodM = text.match(/NGN([A-Za-z]{3}\s+\d{1,2},\s*\d{4})\s*to\s*([A-Za-z]{3}\s+\d{1,2},\s*\d{4})/i);
     return {
@@ -2587,11 +2603,29 @@ async function parseMonoAgg(file) {
       const s = (it.str || '').trim();
       if (!s) continue;
       items.push({ x0: it.transform[4], y: it.transform[5], s });
-      if (s === 'DEBIT') colDebit = it.transform[4];
-      else if (s === 'CREDIT') colCredit = it.transform[4];
-      else if (s === 'BALANCE') colBalance = it.transform[4];
     }
     if (!items.length) continue;
+
+    // Recalibrate column positions only from a genuine header row — DEBIT,
+    // CREDIT, and BALANCE all appearing together on the same row. Matching
+    // any one of these words in isolation is unsafe: a real transaction
+    // can be narrated exactly "BALANCE", and the cover page's own monthly-
+    // summary mini-table has an unrelated "BALANCE" column header too —
+    // both falsely triggered recalibration in testing and silently
+    // corrupted amount classification for every row after them on that page.
+    const headerCandidates = {};
+    for (const it of items) {
+      if (['DEBIT','CREDIT','BALANCE'].includes(it.s)) {
+        const key = Math.round(it.y);
+        if (!headerCandidates[key]) headerCandidates[key] = {};
+        headerCandidates[key][it.s] = it.x0;
+      }
+    }
+    for (const row of Object.values(headerCandidates)) {
+      if (row.DEBIT != null && row.CREDIT != null && row.BALANCE != null) {
+        colDebit = row.DEBIT; colCredit = row.CREDIT; colBalance = row.BALANCE;
+      }
+    }
 
     const rows = [];
     for (const it of items) {
@@ -3635,7 +3669,7 @@ function ctStmtCard(s) {
       <button class="ct-stmt-remove" data-remove="${s.id}" title="Remove">&times;</button>
     </div>`;
   }
-  const cs = s.cs, bank = FNAMES[s.fmt] || s.fmt;
+  const cs = s.cs, bank = bankLabel(s.fmt, cs);
   return `
   <div class="ct-stmt-card">
     <input type="radio" name="ctAppAccount" class="ct-stmt-radio" data-appacct="${s.id}" ${isApp?'checked':''} title="Set as application account">
@@ -4131,7 +4165,7 @@ function renderAnalysis() {
     return `<tr>
       <td><span class="ct-tier-tag ${p.tier}">${p.tier}</span></td>
       <td>${ctN(p.amount)}</td>
-      <td>${esc(FNAMES[debStmt.fmt]||debStmt.fmt)} → ${esc(FNAMES[crStmt.fmt]||crStmt.fmt)}</td>
+      <td>${esc(bankLabel(debStmt.fmt, debStmt.cs))} → ${esc(bankLabel(crStmt.fmt, crStmt.cs))}</td>
       <td>${p.dayGap.toFixed(1)}d gap</td>
     </tr>`;
   }).join('');
@@ -4161,7 +4195,7 @@ function renderAnalysis() {
     <div class="ct-page">
       <div class="pg-eyebrow">CrediTrace analysis</div>
       <div class="pg-title">Turnover, separated from self-funding.</div>
-      <div class="pg-sub">Application account: <b>${esc(appStmt.cs.acctName||appStmt.fname)}</b> (${esc(FNAMES[appStmt.fmt]||appStmt.fmt)}).</div>
+      <div class="pg-sub">Application account: <b>${esc(appStmt.cs.acctName||appStmt.fname)}</b> (${esc(bankLabel(appStmt.fmt, appStmt.cs))}).</div>
 
       ${ladderHtml}
       ${ratioHtml}
@@ -4192,7 +4226,7 @@ function ctTxnAt(stmtId, idx) {
 }
 function ctBankName(stmtId) {
   const s = ct.statements.find(x => x.id === stmtId);
-  return s ? (FNAMES[s.fmt] || s.fmt) : '—';
+  return s ? bankLabel(s.fmt, s.cs) : '—';
 }
 
 // Every pair and flag touching the application account, as one flat,
@@ -4898,7 +4932,7 @@ async function dlMemoXLSX() {
   ws1.addRow([]);
   const meta = [
     ['Applicant entity', a.appStmt.cs.acctName || a.appStmt.fname],
-    ['Application account', `${a.appStmt.cs.acctNum || '—'}  (${FNAMES[a.appStmt.fmt] || a.appStmt.fmt})`],
+    ['Application account', `${a.appStmt.cs.acctNum || '—'}  (${bankLabel(a.appStmt.fmt, a.appStmt.cs)})`],
     ['Application date', ct.appDate || 'Not set'],
     ['Statements in scope', String(a.reconciled.length)],
   ];
@@ -4971,7 +5005,7 @@ async function dlMemoXLSX() {
     const ev = ri % 2 === 0;
     const isOk = s.status === 'ok';
     const row = ws3.addRow([
-      isOk ? (FNAMES[s.fmt] || s.fmt) : (s.fname || '—'),
+      isOk ? bankLabel(s.fmt, s.cs) : (s.fname || '—'),
       isOk ? (s.cs.acctName || '—') : '—',
       isOk ? (s.cs.acctNum || '—') : '—',
       isOk ? (s.cs.period || '—') : '—',
